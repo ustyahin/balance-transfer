@@ -5,10 +5,24 @@
     <title>balance-transfer</title>
 </head>
 <body>
-<ul>
+<style>
+    table, th, td {
+        border: 1px solid #1d2124;
+    }
+</style>
+<table>
+    <tbody>
+    <tr>
+        <td>Имя пользователя</td>
+        <td>Баланс</td>
+    </tr>
     @foreach($users as $user)
-        <li>{{ $user->name }}</li>
+        <tr>
+            <td>{{ $user->name }}</td>
+            <td>{{ $user->balance }}</td>
+        </tr>
     @endforeach
-</ul>
+    </tbody>
+</table>
 </body>
 </html>
