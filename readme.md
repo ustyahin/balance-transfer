@@ -6,11 +6,12 @@
 ````console
 cp .env.example .env
 ````
-Далее заполняем файл `.env` учитывая базу данных и пользователя базы данных:
+Далее заполняем файл `.env` учитывая базу данных, пользователя базы данных и настрийки очереди:
 ````console
 DB_DATABASE=balance-transfer
 DB_USERNAME=root
 DB_PASSWORD=root
+QUEUE_CONNECTION=database
 ````
 3. Выполняем команды:
 ````console
