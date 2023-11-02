@@ -34,7 +34,7 @@
 
 <h2>Создать отложенный перевод</h2>
 
-<form action="" method="POST">
+<form action="{{ route('transfers.create') }}" method="POST">
     @csrf
 
     <label>От кого (ID пользователя):</label>

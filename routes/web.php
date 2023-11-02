@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'IndexController@index');
+Route::post('/transfers/create', 'TransferController@create')->name('transfers.create');
