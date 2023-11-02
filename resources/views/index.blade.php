@@ -21,12 +21,14 @@
         <td>ID пользователя</td>
         <td>Имя пользователя</td>
         <td>Баланс</td>
+        <td>Дата и время последнего перевода</td>
     </tr>
     @foreach($users as $user)
         <tr>
             <td>{{ $user->id }}</td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->balance }}</td>
+            <td>{{ $user->transactions_created_at }}</td>
         </tr>
     @endforeach
     </tbody>
