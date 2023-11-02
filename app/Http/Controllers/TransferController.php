@@ -19,14 +19,14 @@ class TransferController extends Controller
 
         $delayDate = Carbon::parse($date);
         if (is_null($delayDate)) {
-            return 'false';
+            return 'Дата не распознана. Пожалуйста, введите верную дату';
         }
 
         if ($fromUserId == $toUserId) {
-            return 'false';
+            return 'Вы не можете отправить перевод самому себе';
         }
         if ($money <= 0) {
-            return 'false';
+            return 'Вы не можете отправить сумму меньшую нуля';
         }
 
         $fromUser = User::find($fromUserId);
@@ -45,9 +45,9 @@ class TransferController extends Controller
             dispatch(new TransferMoneyJob($transactionId))
                 ->delay($delayDate);
         } else {
-            return 'false';
+            return 'У данного пользователя недостаточно средств для перевода';
         }
 
-        return 'true';
+        return 'Отложенный платеж успешно создан';
     }
 }
