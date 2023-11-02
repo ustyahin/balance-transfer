@@ -17,8 +17,10 @@ class TransferController extends Controller
         $money = $request->input('money');
         $date = $request->input('date');
 
-        // check parse
-        Carbon::parse($date)->format('Y-m-d H:i:s');
+        $delayDate = Carbon::parse($date);
+        if (is_null($delayDate)) {
+            return 'false';
+        }
 
         if ($fromUserId == $toUserId) {
             return 'false';
@@ -41,7 +43,7 @@ class TransferController extends Controller
 
             // Выполняем задачу перевода денег
             dispatch(new TransferMoneyJob($transactionId))
-                ->delay($date);
+                ->delay($delayDate);
         } else {
             return 'false';
         }
