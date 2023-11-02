@@ -17,6 +17,14 @@ QUEUE_CONNECTION=database
 ````console
 php artisan migrate
 ````
+4. Запускаем в очередь (в одном терминале)
+````console
+php artisan queue:work
+````
+5. Запускаем в веб-сервер (в другом терминале)
+````console
+php artisan serve
+````
 
 ## Условия задачи
 
