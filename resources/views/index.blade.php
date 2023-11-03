@@ -40,19 +40,19 @@
     @csrf
 
     <label>От кого (ID пользователя):</label>
-    <input type="number" name="from_user_id" value="">
+    <input required type="number" name="from_user_id" value="">
     <br />
 
     <label>Кому (ID пользователя):</label>
-    <input type="number" name="to_user_id" value="">
+    <input required type="number" name="to_user_id" value="">
     <br />
 
     <label>Сумма перевода:</label>
-    <input type="number" name="money" value="">
+    <input required type="number" name="money" value="">
     <br />
 
     <label>Запланировать дату:</label>
-    <input type="datetime-local" name="date" value="">
+    <input required type="datetime-local" name="date" value="">
     <br />
 
     <button>Запланировать</button>

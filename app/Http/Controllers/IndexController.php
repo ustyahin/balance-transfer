@@ -18,7 +18,9 @@ class IndexController extends Controller
                     $q->on('transactions.from_user_id', '=', 'u.id')
                     ->whereRaw('transactions.success = 1 AND transactions.id = (SELECT MAX(id) FROM transactions WHERE from_user_id = u.id)');
             })
+
             ->get();
+
 
         return view('index', ['users' => $users]);
     }
