@@ -15,6 +15,9 @@ QUEUE_CONNECTION=database
 ````
 3. Выполняем команды:
 ````console
+composer install
+````
+````console
 php artisan migrate
 ````
 4. Запускаем в очередь (в одном терминале)
@@ -25,6 +28,8 @@ php artisan queue:work
 ````console
 php artisan serve
 ````
+6. Создать пользователей в таблице Users
+
 
 ## Условия задачи
 
